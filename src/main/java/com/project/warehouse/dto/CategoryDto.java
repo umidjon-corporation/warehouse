@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 @Data
 public class CategoryDto {
+    private final Boolean active;
     private String name;
     private String parentCategoryId;
 }

@@ -13,10 +13,13 @@ import javax.persistence.*;
 @Table(name = "attachment")
 public class Attachment {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Id")
+    @ToString.Exclude
+    private Attachment_Content Id;
 
+    @Column(name = "active")
+    private Boolean active=true;
     @Column(name = "size",nullable = false)
     private Long size;
 
